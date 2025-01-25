@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://b18ghtupalf8r"]
+
+[ext_resource type="Script" path="res://Stage elements/explodingbarrel.gd" id="1_wdpd6"]
+[ext_resource type="Texture2D" uid="uid://bn2kt47dm0gmy" path="res://Art/pixil-frame-0 (1).png" id="2_46v2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8cf"]
+size = Vector2(138, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoy3n"]
+size = Vector2(137.313, 171.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00cyg"]
+radius = 521.311
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuyg3"]
+radius = 502.245
+
+[node name="Barrel" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_wdpd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_nb8cf")
+debug_color = Color(0.857469, 0.125484, 0.400884, 0.42)
+
+[node name="Polygon2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9, -25)
+scale = Vector2(5.55028, 4.56298)
+texture = ExtResource("2_46v2a")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3, -3)
+scale = Vector2(1.20126, 1.08851)
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yoy3n")
+
+[node name="deathtimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_00cyg")
+
+[node name="Explosion" type="Area2D" parent="." groups=["bullet"]]
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_fuyg3")
+disabled = true
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="timeout" from="deathtimer" to="." method="_on_deathtimer_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

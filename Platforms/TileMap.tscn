@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxeva15lnv7wm"]
+
+[ext_resource type="Texture2D" uid="uid://ba4rd4slvw66j" path="res://Art/temptilemap.png" id="1_y5fsb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0bce"]
+texture = ExtResource("1_y5fsb")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-128, -42.6667, 128, -42.6667, 128, -128, -128, -128)
+2:0/0/physics_layer_1/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="10"]
+tile_size = Vector2i(256, 256)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 33
+physics_layer_1/collision_layer = 8
+sources/4 = SubResource("TileSetAtlasSource_o0bce")
+
+[node name="TileMap" type="TileMap"]
+texture_filter = 1
+position = Vector2(-711, 3556)
+tile_set = SubResource("10")
+format = 2

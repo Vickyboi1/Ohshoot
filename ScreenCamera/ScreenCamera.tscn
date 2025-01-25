@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://lrbobe03y04y"]
+
+[ext_resource type="Script" path="res://ScreenCamera/ScreenCamera.gd" id="1"]
+[ext_resource type="Shader" path="res://ScreenCamera/cooleffect.gdshader" id="1_fxqp3"]
+[ext_resource type="Texture2D" uid="uid://bn2kt47dm0gmy" path="res://Art/pixil-frame-0 (1).png" id="3_7756g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djsx5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u1rep"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wp4h7"]
+width = 787
+noise = SubResource("FastNoiseLite_u1rep")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_heg1l"]
+shader = ExtResource("1_fxqp3")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/sample_radius = 0.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/center_radius = 0.793
+shader_parameter/hole_smoothness = 0.697
+shader_parameter/hole_radius = 0.025
+shader_parameter/transparency = 0.82
+shader_parameter/noise = SubResource("NoiseTexture2D_wp4h7")
+
+[sub_resource type="Animation" id="Animation_aiyft"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lines:material:shader_parameter/sample_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_r8xht"]
+resource_name = "speedlines"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lines:material:shader_parameter/sample_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.48, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 1, 1.86667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tcrc"]
+_data = {
+"RESET": SubResource("Animation_aiyft"),
+"speedlines": SubResource("Animation_r8xht")
+}
+
+[node name="ScreenCamera" type="Camera2D"]
+material = SubResource("ShaderMaterial_djsx5")
+zoom = Vector2(0.8, 0.8)
+process_callback = 0
+rotation_smoothing_enabled = true
+script = ExtResource("1")
+speedyzoom = Vector2(0.7, 0.7)
+
+[node name="lines" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_heg1l")
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(-122.936, 100)
+texture = ExtResource("3_7756g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3tcrc")
+}
+autoplay = "speedlines"

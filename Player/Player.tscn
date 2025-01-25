@@ -1,0 +1,249 @@
+[gd_scene load_steps=21 format=3 uid="uid://cvboky6pqlyk0"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1"]
+[ext_resource type="Script" path="res://Player/Sprite.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bhbmfovn1akab" path="res://Player/pixil-frame-0.png" id="3_4j80i"]
+[ext_resource type="Shader" path="res://Player/trail.gdshader" id="3_k7t53"]
+[ext_resource type="Texture2D" uid="uid://d0cnjivyu2vgu" path="res://Art/dingbats-471.png" id="4_3vb61"]
+[ext_resource type="Shader" path="res://Player/ammo.gdshader" id="4_acxrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k7ee"]
+size = Vector2(45, 23)
+
+[sub_resource type="Gradient" id="Gradient_6rmai"]
+offsets = PackedFloat32Array(0, 0.770492, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.57377, 0.57377, 0.57377, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ad110"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_koamk"]
+color_ramp = SubResource("Gradient_6rmai")
+noise = SubResource("FastNoiseLite_ad110")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2wto"]
+render_priority = 35
+shader = ExtResource("3_k7t53")
+shader_parameter/gradientRemap = Vector4(0.708, -2.683, 0, 0.264)
+shader_parameter/beamRemap = Vector4(0.404, 1.12, 1, 200)
+shader_parameter/color1 = Color(0.851769, 0.851769, 0.851769, 1)
+shader_parameter/color2 = Color(0.362829, 0.362829, 0.362829, 1)
+shader_parameter/scale = Vector3(1, 50, 0)
+shader_parameter/threshold = 0.993
+shader_parameter/offset = 1.5
+shader_parameter/noise = SubResource("NoiseTexture2D_koamk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxs8x"]
+atlas = ExtResource("3_4j80i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hd4y7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxs8x")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Jump"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1.68179, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Land"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667),
+"transitions": PackedFloat32Array(1.51572, 1.1487, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_04jd4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jtxjj"]
+resource_name = "Reload"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.436332, -6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_3yobr"]
+resource_name = "aim"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
+_data = {
+"Jump": SubResource("3"),
+"Land": SubResource("4"),
+"RESET": SubResource("Animation_04jd4"),
+"Reload": SubResource("Animation_jtxjj"),
+"aim": SubResource("Animation_3yobr")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lb3tm"]
+shader = ExtResource("4_acxrj")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/direction = -1.0
+shader_parameter/frequency = 6.0
+shader_parameter/speed = 4.0
+shader_parameter/radius = 1.0
+shader_parameter/line_thickness = 0.07
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
+collision_mask = 14
+floor_constant_speed = true
+script = ExtResource("1")
+max_speed = 600.0
+max_velocity = 10000.0
+gravity_acceleration = 5500.0
+gravity_max = 2500.0
+jump_force = 1500.0
+
+[node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 4.5)
+shape = SubResource("RectangleShape2D_8k7ee")
+
+[node name="Sprite" type="Node2D" parent="."]
+position = Vector2(0, 11)
+script = ExtResource("2")
+player_path = NodePath("..")
+
+[node name="Polygon2D" type="AnimatedSprite2D" parent="Sprite"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_q2wto")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_hd4y7")
+autoplay = "default"
+frame_progress = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_1lb64")
+}
+
+[node name="Marker2D" type="Marker2D" parent="Sprite"]
+position = Vector2(24, -11)
+gizmo_extents = 25.0
+
+[node name="animationreset" type="Timer" parent="Sprite"]
+wait_time = 1.5
+one_shot = true
+
+[node name="Ammooutline" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_lb3tm")
+position = Vector2(1.49115, -33.2437)
+scale = Vector2(0.0241847, 0.0364641)
+texture = ExtResource("4_3vb61")
+
+[node name="haveammo" type="Polygon2D" parent="Sprite/Ammooutline"]
+visible = false
+position = Vector2(-0.857544, 424.7)
+scale = Vector2(10.6007, 6.5422)
+color = Color(0.393261, 0.540943, 0.686296, 1)
+polygon = PackedVector2Array(-24.9344, -105.47, 25.4949, -105.47, 25.334, -64.4316, 25.355, -24.4881, -25.3444, -24.3959, -24.9344, -64.4922)
+
+[node name="updateveloc" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="reloadcool" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Sprite/animationreset" to="Sprite" method="_on_animationreset_timeout"]
+[connection signal="timeout" from="updateveloc" to="." method="_on_updateveloc_timeout"]

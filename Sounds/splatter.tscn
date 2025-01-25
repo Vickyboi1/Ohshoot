@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyin7lsk5h2wa"]
+
+[ext_resource type="AudioStream" uid="uid://c3kf7jr2n6a70" path="res://Sounds/enemydeath/hit-flesh-02-266309.mp3" id="2_h0sha"]
+[ext_resource type="AudioStream" uid="uid://3rdqxcvfreoh" path="res://Sounds/enemydeath/very-loud-splat-88998.mp3" id="3_aubnq"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fivuu"]
+random_pitch = 1.2
+streams_count = 2
+stream_0/stream = ExtResource("2_h0sha")
+stream_0/weight = 0.5
+stream_1/stream = ExtResource("3_aubnq")
+
+[sub_resource type="Animation" id="Animation_dphti"]
+resource_name = "cycle"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_um6tc"]
+_data = {
+"cycle": SubResource("Animation_dphti")
+}
+
+[node name="Splatter" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStreamRandomizer_fivuu")
+volume_db = -5.0
+pitch_scale = 0.8
+autoplay = true
+max_distance = 177760.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_um6tc")
+}
+autoplay = "cycle"
