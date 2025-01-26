@@ -824,8 +824,7 @@ texture = ExtResource("1_tiqux")
 [sub_resource type="TileSet" id="TileSet_m15ab"]
 sources/1 = SubResource("TileSetAtlasSource_q2d28")
 
-[node name="InputIcontilemap" type="TileMap"]
+[node name="InputIcontilemap" type="TileMapLayer"]
 texture_filter = 1
-scale = Vector2(6, 6)
+use_parent_material = true
 tile_set = SubResource("TileSet_m15ab")
-format = 2

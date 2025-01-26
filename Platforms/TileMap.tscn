@@ -21,8 +21,7 @@ physics_layer_0/collision_mask = 33
 physics_layer_1/collision_layer = 8
 sources/4 = SubResource("TileSetAtlasSource_o0bce")
 
-[node name="TileMap" type="TileMap"]
+[node name="Tilemap" type="TileMapLayer"]
 texture_filter = 1
-position = Vector2(-711, 3556)
+use_parent_material = true
 tile_set = SubResource("10")
-format = 2

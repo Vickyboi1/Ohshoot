@@ -121,7 +121,7 @@ func _physics_process(delta: float) -> void:
 		$reloadcool.start()
 		#Converts x velocity into y velocity
 		velocity.x = 0
-		velocity.y = -(abs(currentveloc.x) * 0.9) - (jump_force)
+		velocity.y += -(abs(currentveloc.x * 0.9)) - (jump_force)
 		#Tells sprite to play the reload animation
 		uni.reload.emit()
 		#Sound

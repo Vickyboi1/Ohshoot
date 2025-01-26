@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8cf"]
 size = Vector2(75, 40.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc1sm"]
-size = Vector2(137.313, 171.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_db1af"]
+radius = 49.1495
 
 [node name="Enemy" type="StaticBody2D" groups=["enemies"]]
 scale = Vector2(2, 2)
@@ -33,7 +33,7 @@ collision_layer = 16
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_wc1sm")
+position = Vector2(0.416229, 13.321)
+shape = SubResource("CircleShape2D_db1af")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

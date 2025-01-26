@@ -26,6 +26,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		
-		get_tree().change_scene_to_file.call_deferred("res://World/Level" + str(uni.currentlevel + 1) + ".tscn")
-		uni.currentlevel += 1
+		var curlev = get_tree().current_scene.scene_file_path.replace("res://World/Level","").replace(".tscn","")
+		uni.levels[str(int(curlev) + 1)]["available"] = true 
+		get_tree().change_scene_to_file.call_deferred("res://levelselect.tscn")

@@ -238,7 +238,7 @@ color = Color(0.393261, 0.540943, 0.686296, 1)
 polygon = PackedVector2Array(-24.9344, -105.47, 25.4949, -105.47, 25.334, -64.4316, 25.355, -24.4881, -25.3444, -24.3959, -24.9344, -64.4922)
 
 [node name="updateveloc" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.15
 autostart = true
 
 [node name="reloadcool" type="Timer" parent="."]

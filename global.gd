@@ -12,3 +12,15 @@ var barrelpower = Vector2(1500,1800)
 var barrelrad = 0
 
 @onready var currentlevel : int = 1
+var godmode = true
+
+var levels = {
+	"1" : {"available":true,"fastesttime":0.00,"completed": false},
+	"2" : {"available":false,"fastesttime":0.00,"completed": false},
+	"3" : {"available":false,"fastesttime":0.00,"completed": false},
+	"4" : {"available":false,"fastesttime":0.00,"completed": false},
+	"5" : {"available":false,"fastesttime":0.00,"completed": false},
+	"6" : {"available":false,"fastesttime":0.00,"completed": false}
+	
+	
+}
