@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://lrbobe03y04y"]
+[gd_scene load_steps=12 format=3 uid="uid://lrbobe03y04y"]
 
 [ext_resource type="Script" path="res://ScreenCamera/ScreenCamera.gd" id="1"]
 [ext_resource type="Shader" path="res://ScreenCamera/cooleffect.gdshader" id="1_fxqp3"]
 [ext_resource type="Texture2D" uid="uid://bn2kt47dm0gmy" path="res://Art/pixil-frame-0 (1).png" id="3_7756g"]
+[ext_resource type="PackedScene" uid="uid://ctmn87avr5yqh" path="res://timer.tscn" id="4_jdsis"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_djsx5"]
 
@@ -79,3 +80,5 @@ libraries = {
 "": SubResource("AnimationLibrary_3tcrc")
 }
 autoplay = "speedlines"
+
+[node name="speedruntimer" parent="." instance=ExtResource("4_jdsis")]

@@ -17,7 +17,7 @@ func die():
 		
 		
 			uni.blowback.emit(global_position)
-			print("activated!")
+			
 	
 	$deathtimer.start()
 	$Polygon2D.set_deferred("visible",false)

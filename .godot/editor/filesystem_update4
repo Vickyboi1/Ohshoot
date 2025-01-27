@@ -1,12 +1,5 @@
-res://World/Level1.tscn
-res://ScreenCamera/cooleffect.gdshader
+res://Player/Player.tscn
 res://Player/trail.gdshader
 res://Player/ammo.gdshader
-res://World/Level2.tscn
-res://World/Level3.tscn
-res://World/Level4.tscn
-res://World/Level5.tscn
-res://World/Level6.tscn
-res://Platforms/TileMap.tscn
-res://Player/Player.gd
-res://global.gd
+res://ScreenCamera/cooleffect.gdshader
+res://Stage elements/outlineshader.gdshader

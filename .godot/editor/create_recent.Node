@@ -1,3 +1,7 @@
+AnimatedSprite2D
+Label
+CanvasLayer
+Node
 Button
 OptionButton
 Polygon2D

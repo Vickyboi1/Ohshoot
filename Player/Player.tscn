@@ -8,7 +8,7 @@
 [ext_resource type="Shader" path="res://Player/ammo.gdshader" id="4_acxrj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k7ee"]
-size = Vector2(45, 23)
+size = Vector2(43.914, 22.6875)
 
 [sub_resource type="Gradient" id="Gradient_6rmai"]
 offsets = PackedFloat32Array(0, 0.770492, 1)
@@ -32,7 +32,7 @@ shader_parameter/threshold = 0.993
 shader_parameter/offset = 1.5
 shader_parameter/noise = SubResource("NoiseTexture2D_koamk")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxs8x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gvin"]
 atlas = ExtResource("3_4j80i")
 region = Rect2(0, 0, 64, 64)
 
@@ -40,7 +40,7 @@ region = Rect2(0, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bxs8x")
+"texture": SubResource("AtlasTexture_8gvin")
 }],
 "loop": false,
 "name": &"default",
@@ -186,6 +186,7 @@ shader_parameter/line_thickness = 0.07
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_mask = 14
+floor_stop_on_slope = false
 floor_constant_speed = true
 script = ExtResource("1")
 max_speed = 600.0
@@ -195,18 +196,17 @@ gravity_max = 2500.0
 jump_force = 1500.0
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 4.5)
+position = Vector2(3.57094, -6.10993)
 shape = SubResource("RectangleShape2D_8k7ee")
 
 [node name="Sprite" type="Node2D" parent="."]
-position = Vector2(0, 11)
 script = ExtResource("2")
 player_path = NodePath("..")
 
 [node name="Polygon2D" type="AnimatedSprite2D" parent="Sprite"]
 texture_filter = 1
 material = SubResource("ShaderMaterial_q2wto")
-position = Vector2(0, -8)
+position = Vector2(2.08507, -7.31766)
 sprite_frames = SubResource("SpriteFrames_hd4y7")
 autoplay = "default"
 frame_progress = 1.0
@@ -231,10 +231,9 @@ scale = Vector2(0.0241847, 0.0364641)
 texture = ExtResource("4_3vb61")
 
 [node name="haveammo" type="Polygon2D" parent="Sprite/Ammooutline"]
-visible = false
 position = Vector2(-0.857544, 424.7)
 scale = Vector2(10.6007, 6.5422)
-color = Color(0.393261, 0.540943, 0.686296, 1)
+color = Color(0.776652, 0.40912, 0.254325, 1)
 polygon = PackedVector2Array(-24.9344, -105.47, 25.4949, -105.47, 25.334, -64.4316, 25.355, -24.4881, -25.3444, -24.3959, -24.9344, -64.4922)
 
 [node name="updateveloc" type="Timer" parent="."]

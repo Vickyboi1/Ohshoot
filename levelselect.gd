@@ -3,7 +3,6 @@ extends Control
 
 func _ready() -> void:
 	
-	$OptionButton.selected = $OptionButton.item_count - 1
 	
 	#Gets level list
 	for level in uni.levels:
@@ -12,7 +11,14 @@ func _ready() -> void:
 				
 					$OptionButton.add_item(level)
 	
+	$OptionButton.selected = $OptionButton.item_count 
+	
 
 
 func _on_confirm_pressed() -> void:
-	get_tree().change_scene_to_file("res://World/Level" +str($OptionButton.get_item_id($OptionButton.selected) + 1)  + ".tscn")
+	get_tree().change_scene_to_file("res://World/Level" +str($OptionButton.get_item_id($OptionButton.selected))  + ".tscn")
+
+
+func _process(delta: float) -> void:
+	#Show times
+	$besttime.set_text("Best Time : " + str(uni.levels[str($OptionButton.selected)]["fastesttime"]))

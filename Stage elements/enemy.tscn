@@ -1,15 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://deevnrn4eieph"]
+[gd_scene load_steps=12 format=3 uid="uid://deevnrn4eieph"]
 
 [ext_resource type="Script" path="res://Stage elements/enemy.gd" id="1_hlxu6"]
-[ext_resource type="Texture2D" uid="uid://df22kacb43jiy" path="res://Art/pixil-frame-0.png" id="2_1u5ci"]
+[ext_resource type="Shader" path="res://Stage elements/outlineshader.gdshader" id="2_3s033"]
+[ext_resource type="Texture2D" uid="uid://dp60d5wp4mq3g" path="res://Art/Enemy.PNG" id="2_ilmv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8cf"]
 size = Vector2(75, 40.25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjtpl"]
+shader = ExtResource("2_3s033")
+shader_parameter/line_color = Color(0.847474, 0.847474, 0.847474, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhegd"]
+atlas = ExtResource("2_ilmv0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6bs0"]
+atlas = ExtResource("2_ilmv0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34r1t"]
+atlas = ExtResource("2_ilmv0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mnyw"]
+atlas = ExtResource("2_ilmv0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7m7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhegd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6bs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34r1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mnyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_db1af"]
 radius = 49.1495
 
 [node name="Enemy" type="StaticBody2D" groups=["enemies"]]
+position = Vector2(0, -20)
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
@@ -20,11 +63,14 @@ position = Vector2(-3, 21.125)
 shape = SubResource("RectangleShape2D_nb8cf")
 debug_color = Color(0.857469, 0.125484, 0.400884, 0.42)
 
-[node name="Polygon2D" type="Sprite2D" parent="."]
+[node name="Polygon2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1.5, 9)
+material = SubResource("ShaderMaterial_mjtpl")
+position = Vector2(-1.5, 7)
 scale = Vector2(1.92969, 1.99219)
-texture = ExtResource("2_1u5ci")
+sprite_frames = SubResource("SpriteFrames_g7m7b")
+autoplay = "default"
+frame_progress = 0.774084
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-3, -3)
@@ -33,7 +79,7 @@ collision_layer = 16
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.416229, 13.321)
+position = Vector2(2.08115, 11.4836)
 shape = SubResource("CircleShape2D_db1af")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

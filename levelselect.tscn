@@ -15,13 +15,27 @@ script = ExtResource("1_ndahj")
 layout_mode = 0
 offset_right = 319.0
 offset_bottom = 72.0
+selected = 0
+allow_reselect = true
+item_count = 1
+popup/item_0/text = "Choose a level!"
+popup/item_0/separator = true
 
 [node name="Confirm" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 995.0
-offset_right = 311.0
-offset_bottom = 1080.0
+offset_left = -3.0
+offset_top = 861.0
+offset_right = 307.0
+offset_bottom = 946.0
+scale = Vector2(3.63436, 2.51911)
 text = "Go!"
+
+[node name="besttime" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 112.0
+offset_right = 139.0
+offset_bottom = 182.0
+text = "Best Time : None"
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

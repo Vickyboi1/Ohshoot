@@ -1,19 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737867907
+::res://::1738021379
 bullet.gd::GDScript::-1::1737671544::0::1::::<>Area2D<>::
 bullet.tscn::PackedScene::3665858824813741264::1737753332::0::1::::<><>::res://bullet.gd
-export_presets.cfg::TextFile::-1::1737173544::0::1::::<><>::
-global.gd::GDScript::-1::1737847632::0::1::::<>Node<>::
+global.gd::GDScript::-1::1738014158::0::1::::<>Node<>::
 input_icontilemap.tscn::PackedScene::8647732565317115602::1737851331::0::1::::<><>::uid://ca6bvjqvrxlpo::::res://Art/tilemap_black_packed.png
-levelexit.gd::GDScript::-1::1737845437::0::1::::<>Area2D<>::
-levelexit.tscn::PackedScene::1539041754607587167::1737753332::0::1::::<><>::res://levelexit.gd<>uid://b8x3rv8tdlcbm::::res://Art/Circle.png<>uid://dasla20xwiwfa::::res://Sounds/zapThreeToneUp.ogg
-levelselect.gd::GDScript::-1::1737845807::0::1::::<>Control<>::
-levelselect.tscn::PackedScene::5503080638069945503::1737850281::0::1::::<><>::res://levelselect.gd
+levelexit.gd::GDScript::-1::1738021187::0::1::::<>Area2D<>::
+levelexit.tscn::PackedScene::1539041754607587167::1738021344::0::1::::<><>::res://levelexit.gd<>uid://b8x3rv8tdlcbm::::res://Art/Circle.png<>uid://dasla20xwiwfa::::res://Sounds/zapThreeToneUp.ogg
+levelselect.gd::GDScript::-1::1738020994::0::1::::<>Control<>::
+levelselect.tscn::PackedScene::5503080638069945503::1738021343::0::1::::<><>::res://levelselect.gd
 LICENSE.md::TextFile::-1::1737173544::0::1::::<><>::
 README.md::TextFile::-1::1737398619::0::1::::<><>::
-::res://Art/::1737753794
+speedruntimer.gd::GDScript::-1::1738011325::0::1::::<>CanvasLayer<>::
+timer.tscn::PackedScene::6132051863387633959::1738021343::0::1::::<><>::res://speedruntimer.gd
+::res://Art/::1737944848
 Circle.png::CompressedTexture2D::4751864801222004318::1737173544::1737753794::1::::<><>::
 dingbats-471.png::CompressedTexture2D::8918917744335296908::1737581841::1737753794::1::::<><>::
+Enemy.PNG::CompressedTexture2D::8277615308633495950::1737944834::1737944848::1::::<><>::
 pixil-frame-0 (1).png::CompressedTexture2D::3355256523123221424::1737658351::1737753794::1::::<><>::
 pixil-frame-0.png::CompressedTexture2D::7567601688547731740::1737658004::1737753794::1::::<><>::
 temptilemap.png::CompressedTexture2D::2447326736331967107::1737660122::1737753794::1::::<><>::
@@ -28,20 +30,22 @@ plugin.cfg::TextFile::-1::1737767722::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1737767722::0::1::::<><>::
 ::res://Git/addons/godot-git-plugin/linux/::1737767727
 ::res://Git/addons/godot-git-plugin/macos/::1737767727
-::res://Git/addons/godot-git-plugin/win64/::1737867901
-::res://Platforms/::1737867623
-TileMap.tscn::PackedScene::8783139435087644240::1737867623::0::1::::<><>::uid://ba4rd4slvw66j::::res://Art/temptilemap.png
-::res://Player/::1737867867
-ammo.gdshader::Shader::-1::1737867867::0::1::::<><>::
+::res://Git/addons/godot-git-plugin/win64/::1738021373
+::res://Platforms/::1737908535
+TileMap.tscn::PackedScene::8783139435087644240::1737908535::0::1::::<><>::uid://ba4rd4slvw66j::::res://Art/temptilemap.png
+::res://Player/::1738021354
+ammo.gdshader::Shader::-1::1738021354::0::1::::<><>::
+explobarrel.png::CompressedTexture2D::2894180278799461275::1738008494::1738008494::1::::<><>::
+gun.png::CompressedTexture2D::1536364234155758485::1738008482::1738009163::1::::<><>::
 pixil-frame-0.png::CompressedTexture2D::2880545268189321129::1737243295::1737753794::1::::<><>::
-Player.gd::GDScript::-1::1737759737::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::6249740666529434949::1737850281::0::1::::<><>::res://Player/Player.gd<>res://Player/Sprite.gd<>uid://bhbmfovn1akab::::res://Player/pixil-frame-0.png<>res://Player/trail.gdshader<>uid://d0cnjivyu2vgu::::res://Art/dingbats-471.png<>res://Player/ammo.gdshader
+Player.gd::GDScript::-1::1737910186::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::6249740666529434949::1738021343::0::1::::<><>::res://Player/Player.gd<>res://Player/Sprite.gd<>uid://bhbmfovn1akab::::res://Player/pixil-frame-0.png<>res://Player/trail.gdshader<>uid://d0cnjivyu2vgu::::res://Art/dingbats-471.png<>res://Player/ammo.gdshader
 Sprite.gd::GDScript::-1::1737583749::0::1::::<>Node2D<>::
-trail.gdshader::Shader::-1::1737867867::0::1::::<><>::
-::res://ScreenCamera/::1737867867
-cooleffect.gdshader::Shader::-1::1737867867::0::1::::<><>::
+trail.gdshader::Shader::-1::1738021354::0::1::::<><>::
+::res://ScreenCamera/::1738021354
+cooleffect.gdshader::Shader::-1::1738021354::0::1::::<><>::
 ScreenCamera.gd::GDScript::-1::1737754345::0::1::::<>Camera2D<>::
-ScreenCamera.tscn::PackedScene::807257479821651446::1737850281::0::1::::<><>::res://ScreenCamera/ScreenCamera.gd<>res://ScreenCamera/cooleffect.gdshader<>uid://bn2kt47dm0gmy::::res://Art/pixil-frame-0 (1).png
+ScreenCamera.tscn::PackedScene::807257479821651446::1738021344::0::1::::<><>::res://ScreenCamera/ScreenCamera.gd<>res://ScreenCamera/cooleffect.gdshader<>uid://bn2kt47dm0gmy::::res://Art/pixil-frame-0 (1).png<>uid://ctmn87avr5yqh::::res://timer.tscn
 ::res://Sounds/::1737753794
 1911-reload-6248.mp3::AudioStreamMP3::4663216570129765469::1737401886::1737753794::1::::<><>::
 080978_fully-automatic-pistol-uzi-39778.mp3::AudioStreamMP3::9161996457398827570::1737401825::1737753794::1::::<><>::
@@ -65,16 +69,18 @@ very-loud-splat-88998.mp3::AudioStreamMP3::2000593979452861675::1737584508::1737
 ::res://Sounds/explosion/::1737753794
 medium-explosion-40472.mp3::AudioStreamMP3::5527483902396511991::1737591538::1737753794::1::::<><>::
 small-explosion-94980.mp3::AudioStreamMP3::8564308923548012134::1737591655::1737753794::1::::<><>::
-::res://Stage elements/::1737850281
+::res://Stage elements/::1738021354
 enemy.gd::GDScript::-1::1737671803::0::1::::<>StaticBody2D<>::
-enemy.tscn::PackedScene::7449574123119233269::1737850281::0::1::::<><>::res://Stage elements/enemy.gd<>uid://df22kacb43jiy::::res://Art/pixil-frame-0.png
-enemydeath.tscn::PackedScene::8266992218964447947::1737670067::0::1::::<><>::uid://b8x3rv8tdlcbm::::res://Art/Circle.png
-explodingbarrel.gd::GDScript::-1::1737664925::0::1::::<>StaticBody2D<>::
-explodingbarrel.tscn::PackedScene::4279832916201560383::1737850281::0::1::::<><>::res://Stage elements/explodingbarrel.gd<>uid://bn2kt47dm0gmy::::res://Art/pixil-frame-0 (1).png
-::res://World/::1737867862
-Level1.tscn::PackedScene::5137965552112069295::1737867862::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
-Level2.tscn::PackedScene::8920378478323236812::1737867602::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn
-Level3.tscn::PackedScene::1187939171299348180::1737867623::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn
-Level4.tscn::PackedScene::5632240386599786244::1737867623::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
-Level5.tscn::PackedScene::709255576353841786::1737867623::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
-Level6.tscn::PackedScene::6816091550818193068::1737867623::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
+enemy.tscn::PackedScene::7449574123119233269::1738008922::0::1::::<><>::res://Stage elements/enemy.gd<>res://Stage elements/outlineshader.gdshader<>uid://dp60d5wp4mq3g::::res://Art/Enemy.PNG
+enemydeath.tscn::PackedScene::8266992218964447947::1738021344::0::1::::<><>::uid://b8x3rv8tdlcbm::::res://Art/Circle.png
+explodingbarrel.gd::GDScript::-1::1738015279::0::1::::<>StaticBody2D<>::
+explodingbarrel.tscn::PackedScene::4279832916201560383::1738021344::0::1::::<><>::res://Stage elements/explodingbarrel.gd<>res://Stage elements/outlineshader.gdshader<>uid://bhh7yxwlmw04n::::res://Player/explobarrel.png
+outlineshader.gdshader::Shader::-1::1738021354::0::1::::<><>::
+::res://World/::1738021344
+Level1.tscn::PackedScene::5137965552112069295::1738021343::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
+Level2.tscn::PackedScene::8920378478323236812::1738021344::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn
+Level3.tscn::PackedScene::1187939171299348180::1738012805::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn
+Level4.tscn::PackedScene::5632240386599786244::1738021344::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
+Level5.tscn::PackedScene::709255576353841786::1738012813::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
+Level6.tscn::PackedScene::6816091550818193068::1738021344::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://deevnrn4eieph::::res://Stage elements/enemy.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn<>uid://b18ghtupalf8r::::res://Stage elements/explodingbarrel.tscn
+Level7.tscn::PackedScene::1044352183351377610::1738012831::0::1::::<><>::uid://lrbobe03y04y::::res://ScreenCamera/ScreenCamera.tscn<>uid://cvboky6pqlyk0::::res://Player/Player.tscn<>uid://dvha5lbjyxoac::::res://input_icontilemap.tscn<>uid://dxeva15lnv7wm::::res://Platforms/TileMap.tscn<>uid://v6r17r30aovn::::res://levelexit.tscn

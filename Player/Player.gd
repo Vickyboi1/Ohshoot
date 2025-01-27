@@ -120,8 +120,9 @@ func _physics_process(delta: float) -> void:
 		canreload = false
 		$reloadcool.start()
 		#Converts x velocity into y velocity
-		velocity.x = 0
 		velocity.y += -(abs(currentveloc.x * 0.9)) - (jump_force)
+		velocity.x = 0
+		
 		#Tells sprite to play the reload animation
 		uni.reload.emit()
 		#Sound
@@ -153,6 +154,12 @@ func _physics_process(delta: float) -> void:
 
 	if abs(velocity.x) >= max_velocity:
 		velocity.x = max_velocity * x_dir
+		
+		
+	
+	
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 func x_movement(delta: float) -> void:
 	x_dir = get_input()["x"]
 	#Regular movement -------------------------------------------

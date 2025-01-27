@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b18ghtupalf8r"]
+[gd_scene load_steps=9 format=3 uid="uid://b18ghtupalf8r"]
 
 [ext_resource type="Script" path="res://Stage elements/explodingbarrel.gd" id="1_wdpd6"]
-[ext_resource type="Texture2D" uid="uid://bn2kt47dm0gmy" path="res://Art/pixil-frame-0 (1).png" id="2_46v2a"]
+[ext_resource type="Shader" path="res://Stage elements/outlineshader.gdshader" id="2_ln4y1"]
+[ext_resource type="Texture2D" uid="uid://bhh7yxwlmw04n" path="res://Player/explobarrel.png" id="2_nofth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8cf"]
 size = Vector2(138, 168)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6v7qb"]
+shader = ExtResource("2_ln4y1")
+shader_parameter/line_color = Color(0.580392, 0.184314, 0.105882, 1)
+shader_parameter/line_thickness = 25.652
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoy3n"]
 size = Vector2(137.313, 171.5)
@@ -26,9 +32,10 @@ debug_color = Color(0.857469, 0.125484, 0.400884, 0.42)
 
 [node name="Polygon2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(9, -25)
-scale = Vector2(5.55028, 4.56298)
-texture = ExtResource("2_46v2a")
+material = SubResource("ShaderMaterial_6v7qb")
+position = Vector2(6.00003, 7.00003)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_nofth")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-3, -3)

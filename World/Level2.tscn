@@ -9,7 +9,7 @@
 
 [sub_resource type="GDScript" id="GDScript_88beg"]
 
-[node name="World" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = SubResource("GDScript_88beg")
 
 [node name="Background" type="ColorRect" parent="."]
