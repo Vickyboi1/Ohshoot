@@ -13,6 +13,7 @@ var incontrol : bool = true
 var canreload : bool = true
 var consecutivebounces = 0
 var currentveloc : Vector2
+
 # aim line size---------------------------------------- #
 var size = 0
 var basesize = 1
@@ -68,12 +69,15 @@ func _process(float):
 	else:
 		$Sprite/Ammooutline/haveammo.hide()
 func _physics_process(delta: float) -> void:
-	
-	
+
 	
 	if !global_position.distance_to(get_global_mouse_position()) <= 50:
 		queue_redraw()
+	
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+
+
+
 	x_dir = get_input()["x"]
 	uni.playervelocity = currentveloc
 	uni.playerpos = global_position
@@ -101,7 +105,7 @@ func _physics_process(delta: float) -> void:
 		var b = Bullet.instantiate()
 		b.transform = $Sprite/Marker2D.global_transform
 		owner.add_child(b)
-		
+		$justshot.start()
 		#Offset rotation
 	#if is_on_wall() and get_input()["bounce"]:
 		#consecutivebounces += 1
@@ -149,8 +153,8 @@ func _physics_process(delta: float) -> void:
 			#print("Hi")
 		size = 0
 		rotation = 0
-		tween.tween_property(Engine,"time_scale",1,0.2)
-		tween.tween_property(AudioServer,"playback_speed_scale",0.8,1.1)
+		tween.tween_property(Engine,"time_scale",1,0.5)
+		tween.tween_property(AudioServer,"playback_speed_scale",1,1.1)
 
 	if abs(velocity.x) >= max_velocity:
 		velocity.x = max_velocity * x_dir
@@ -201,16 +205,8 @@ func set_direction(hor_direction) -> void:
 func jump_logic(_delta: float) -> void:
 	# Reset our jump requirements
 	# Reloads the player ----------------------------
-	if is_on_floor():
-		
-		jump_coyote_timer = jump_coyote
-		is_jumping = false
-		canreload = true
-		incontrol = true
-		#if !get_input()["bounce"]:
-			#incontrol = true
-			
-	#Coyote + jump buffer. Ignore --------------------------------
+	
+	#Coyote + jump buffer. Ignore ---4----------------------------
 	if get_input()["just_jump"]:
 		jump_buffer_timer = jump_buffer
 	
@@ -224,7 +220,10 @@ func jump_logic(_delta: float) -> void:
 			velocity.y -= velocity.y
 		
 		velocity.y = -jump_force
-	
+		if !$justshot.is_stopped():
+			velocity.x *= 1.3
+			
+		
 	# This should only happen when moving upwards, as doing this while falling would lead to
 	# The ability to studder our player mid falling
 	if get_input()["released_jump"] and velocity.y < 0:
@@ -232,7 +231,12 @@ func jump_logic(_delta: float) -> void:
 	
 
 	if is_on_ceiling(): velocity.y = jump_hang_treshold + 100.0
-
+	if is_on_floor():	
+		
+		jump_coyote_timer = jump_coyote
+		is_jumping = false
+		canreload = true
+		incontrol = true
 
 func apply_gravity(delta: float) -> void:
 	var applied_gravity : float = 0
@@ -263,7 +267,7 @@ func timers(delta: float) -> void:
 	jump_buffer_timer -= delta
 
 func _draw() -> void:
-	draw_dashed_line(Vector2.ZERO + Vector2(0,-1.5),get_local_mouse_position() * 500,Color.WHITE_SMOKE,size,35,false,true)
+	draw_dashed_line(Vector2.ZERO,Vector2(15,0) * 500,Color.WHITE_SMOKE,size,35,false,true)
 func _on_updateveloc_timeout() -> void:
 	currentveloc = velocity
 

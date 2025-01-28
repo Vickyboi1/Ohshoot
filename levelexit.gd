@@ -15,7 +15,7 @@ func get_enemies():
 func _process(delta: float) -> void:
 	enemiesleft = get_enemies()
 	if !on:
-		if enemiesleft == [] or uni.godmode:
+		if enemiesleft == []:
 		
 			$CollisionShape2D.call_deferred("set_disabled",false)
 			$CPUParticles2D.set_deferred("emitting",true)

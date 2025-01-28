@@ -24,8 +24,8 @@ func _physics_process(_delta: float) -> void:
 	# Actual movement
 
 	#tween.tween_property(self, "global_position", desired_position(), align_time)
-#
 	if abs(uni.playervelocity.x) > 2000 or abs(uni.playervelocity.y) > 2500:
+
 		to_zoom(speedyzoom)
 		
 		$lines.material.set("shader_parameter/line_color",Color(1,1,1))
@@ -38,4 +38,4 @@ func _physics_process(_delta: float) -> void:
 
 func to_zoom(value):
 	var tw = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
-	tw.tween_property(self,"zoom",value,1.5) 
+	tw.tween_property(self,"zoom",value,1) 

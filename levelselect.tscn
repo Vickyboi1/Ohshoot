@@ -1,6 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckny60227fgb4"]
+[gd_scene load_steps=9 format=3 uid="uid://ckny60227fgb4"]
 
 [ext_resource type="Script" path="res://levelselect.gd" id="1_ndahj"]
+[ext_resource type="Texture2D" uid="uid://dtdm4m4kmrdym" path="res://Art/ranking.png" id="2_ed4ec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy7oa"]
+atlas = ExtResource("2_ed4ec")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwh4q"]
+atlas = ExtResource("2_ed4ec")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1icm"]
+atlas = ExtResource("2_ed4ec")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ruh"]
+atlas = ExtResource("2_ed4ec")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tgnf"]
+atlas = ExtResource("2_ed4ec")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbscm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy7oa")
+}],
+"loop": false,
+"name": &"Bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwh4q")
+}],
+"loop": false,
+"name": &"Godlike",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1icm")
+}],
+"loop": false,
+"name": &"Great",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ruh")
+}],
+"loop": true,
+"name": &"NA",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tgnf")
+}],
+"loop": false,
+"name": &"Ok",
+"speed": 5.0
+}]
 
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
@@ -37,5 +101,12 @@ offset_top = 112.0
 offset_right = 139.0
 offset_bottom = 182.0
 text = "Best Time : None"
+
+[node name="Rank" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(601, 130)
+sprite_frames = SubResource("SpriteFrames_hbscm")
+animation = &"Bad"
+autoplay = "NA"
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

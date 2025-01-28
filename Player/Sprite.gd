@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if hasreloaded:
-		Animator.play("RESET")
+
 		Animator.play("Reload")
 		hasreloaded = false
 		
@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 		Animator.play("Land")
 
 	elif previous_frame_velocity.y >= 0 and Player.velocity.y < 0:
-		Animator.play("RESET")
+
 
 		Animator.play("Jump")
 		
