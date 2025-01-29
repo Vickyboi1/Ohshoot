@@ -153,7 +153,7 @@ func _physics_process(delta: float) -> void:
 			#print("Hi")
 		size = 0
 		rotation = 0
-		tween.tween_property(Engine,"time_scale",1,0.5)
+		tween.tween_property(Engine,"time_scale",1,0.1)
 		tween.tween_property(AudioServer,"playback_speed_scale",1,1.1)
 
 	if abs(velocity.x) >= max_velocity:

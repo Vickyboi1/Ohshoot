@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxeva15lnv7wm"]
+[gd_scene load_steps=7 format=3 uid="uid://dxeva15lnv7wm"]
 
 [ext_resource type="Shader" path="res://Platforms/antijitter.gdshader" id="1_dc2jg"]
 [ext_resource type="Texture2D" uid="uid://ba4rd4slvw66j" path="res://Art/temptilemap.png" id="1_y5fsb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_etqfj"]
 shader = ExtResource("1_dc2jg")
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_i5pxd"]
+tile_data = PackedInt32Array(0, 4, 0, 65536, 4, 0, 131072, 4, 0, 196608, 4, 0, 458752, 4, 0, 524288, 4, 0, 589824, 4, 0, 655360, 4, 0, 1, 4, 0, 655361, 4, 0, 2, 4, 0, 655362, 4, 0, 3, 4, 0, 655363, 4, 0, 7, 4, 0, 655367, 4, 0, 8, 4, 0, 655368, 4, 0, 9, 4, 0, 655369, 4, 0, 10, 4, 0, 65546, 4, 0, 131082, 4, 0, 196618, 4, 0, 458762, 4, 0, 524298, 4, 0, 589834, 4, 0, 655370, 4, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0bce"]
 texture = ExtResource("1_y5fsb")
@@ -24,6 +27,7 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 33
 physics_layer_1/collision_layer = 8
 sources/4 = SubResource("TileSetAtlasSource_o0bce")
+pattern_0 = SubResource("TileMapPattern_i5pxd")
 
 [node name="Tilemap" type="TileMapLayer"]
 texture_filter = 1
