@@ -164,6 +164,19 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file.call_deferred("res://levelselect.tscn")
+	if Input.is_action_just_pressed("mute"):
+		uni.musicon = !uni.musicon
+	
+	
+	if uni.musicon:
+		$Levelmusic.volume_db = -12.7
+	else:
+		$Levelmusic.volume_db = -1000
+	
+	
+	
 func x_movement(delta: float) -> void:
 	x_dir = get_input()["x"]
 	#Regular movement -------------------------------------------

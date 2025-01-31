@@ -1,7 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckny60227fgb4"]
+[gd_scene load_steps=27 format=3 uid="uid://ckny60227fgb4"]
 
 [ext_resource type="Script" path="res://levelselect.gd" id="1_ndahj"]
 [ext_resource type="Texture2D" uid="uid://dtdm4m4kmrdym" path="res://Art/ranking.png" id="2_ed4ec"]
+[ext_resource type="Texture2D" uid="uid://ba57q7qjhctss" path="res://Art/elevator.png" id="3_8nter"]
+[ext_resource type="AudioStream" uid="uid://b3dt52m0my6k8" path="res://Sounds/elevator-music-bossa-nova-background-music-version-60s-10900.mp3" id="4_cwcgo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4slq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clwua"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uy7oa"]
 atlas = ExtResource("2_ed4ec")
@@ -66,6 +72,150 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_reico"]
+atlas = ExtResource("3_8nter")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc5hq"]
+atlas = ExtResource("3_8nter")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg237"]
+atlas = ExtResource("3_8nter")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvxl"]
+atlas = ExtResource("3_8nter")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l6re"]
+atlas = ExtResource("3_8nter")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2mrx"]
+atlas = ExtResource("3_8nter")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e8se"]
+atlas = ExtResource("3_8nter")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mws50"]
+atlas = ExtResource("3_8nter")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xqpj"]
+atlas = ExtResource("3_8nter")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31mv0"]
+atlas = ExtResource("3_8nter")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uj3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reico")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc5hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg237")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l6re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2mrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e8se")
+}],
+"loop": false,
+"name": &"Enter",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mws50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xqpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31mv0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}]
+
+[sub_resource type="Animation" id="Animation_ee4di"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade in:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.7]
+}
+
+[sub_resource type="Animation" id="Animation_sxycj"]
+resource_name = "fadein"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade in:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.93845, 0.93845, 0.93845, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.7, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vq28k"]
+_data = {
+"RESET": SubResource("Animation_ee4di"),
+"fadein": SubResource("Animation_sxycj")
+}
+
 [node name="Mainmenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -89,24 +239,88 @@ popup/item_0/separator = true
 layout_mode = 0
 offset_left = -3.0
 offset_top = 861.0
-offset_right = 307.0
+offset_right = 214.0
 offset_bottom = 946.0
 scale = Vector2(3.63436, 2.51911)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b4slq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_clwua")
 text = "Go!"
 
 [node name="besttime" type="Label" parent="."]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 112.0
-offset_right = 139.0
-offset_bottom = 182.0
+offset_left = 429.0
+offset_top = 263.0
+offset_right = 755.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 40
 text = "Best Time : None"
+
+[node name="selectalevel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 71.0
+offset_right = 326.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 40
+text = "^Select a level!"
 
 [node name="Rank" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(601, 130)
+position = Vector2(596, 463)
 sprite_frames = SubResource("SpriteFrames_hbscm")
 animation = &"Bad"
 autoplay = "NA"
 
+[node name="Elevator" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1350.5, 538.5)
+scale = Vector2(4.43359, 4.20703)
+sprite_frames = SubResource("SpriteFrames_6uj3l")
+animation = &"Enter"
+autoplay = "Idle"
+frame = 6
+frame_progress = 1.0
+
+[node name="Fade in" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="fadein" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vq28k")
+}
+
+[node name="LOADING" type="Label" parent="."]
+visible = false
+z_index = 4096
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -95.0
+offset_right = 87.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 245
+text = "Loading..."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_cwcgo")
+volume_db = -12.7
+autoplay = true
+max_distance = 4345.0
+parameters/looping = true
+
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="animation_finished" from="Elevator" to="." method="_on_elevator_animation_finished"]

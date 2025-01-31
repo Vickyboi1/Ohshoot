@@ -1,7 +1,11 @@
-AnimatedSprite2D
-Timer
+AudioStreamPlayer2D
 Label
 CanvasLayer
+AnimationPlayer
+AnimationTree
+ColorRect
+AnimatedSprite2D
+Timer
 Node
 Button
 OptionButton

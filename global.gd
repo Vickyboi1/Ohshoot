@@ -12,7 +12,7 @@ var barrelpower = Vector2(1500,1800)
 var barrelrad = 0
 
 @onready var currentlevel : int = 1
-var godmode = true
+var godmode = false
 
 var levels = {
 	"1" : {"available":true,"fastesttime":"0.00","completed": false,"RankTimes" : {
@@ -44,9 +44,9 @@ var levels = {
 		"Great" : "9.6",
 		"Ok" : "16.00"}},
 	"8" : {"available":false,"fastesttime":"0.00","completed": false,"RankTimes" : {
-		"Godlike" : "0.00",
-		"Great" : "0.00",
-		"Ok" : "0.00"}}
+		"Godlike" : "13.90",
+		"Great" : "15.00",
+		"Ok" : "25.00"}}
 		
 	
 	
@@ -54,3 +54,4 @@ var levels = {
  
 var currenttime = 0.00
 var lastselected = 1
+var musicon = true

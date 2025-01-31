@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready() -> void:
-	
+	$Confirm.disabled = false
 	
 	#Gets level list
 	for level in uni.levels:
@@ -16,9 +16,11 @@ func _ready() -> void:
 
 
 func _on_confirm_pressed() -> void:
-	
+	$Confirm.disabled = true
 	uni.lastselected = $OptionButton.selected
-	get_tree().change_scene_to_file("res://World/Level" +str($OptionButton.get_item_id($OptionButton.selected))  + ".tscn")
+
+	$fadein.play("fadein")
+	$Elevator.play("Enter")
 
 
 func _process(delta: float) -> void:
@@ -40,3 +42,15 @@ func _process(delta: float) -> void:
 		$Rank.play("Bad")
 	else:
 		$Rank.play("NA")
+	
+	#Show "select level" text if the player has the next level unlocked but hasn't played it yet
+	if $OptionButton.selected == 1 and uni.levels["2"]["available"]:
+		$selectalevel.show()
+	else:
+		$selectalevel.hide()
+	
+
+func _on_elevator_animation_finished() -> void:
+	if $Elevator.animation == "Enter":
+		$LOADING.visible = true
+		get_tree().change_scene_to_file("res://World/Level" +str($OptionButton.get_item_id($OptionButton.selected))  + ".tscn")
