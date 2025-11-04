@@ -1,11 +1,11 @@
 [gd_scene load_steps=22 format=3 uid="uid://cvboky6pqlyk0"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1"]
-[ext_resource type="Script" path="res://Player/Sprite.gd" id="2"]
+[ext_resource type="Script" uid="uid://bgcvdcg7p10gt" path="res://Player/Player.gd" id="1"]
+[ext_resource type="Script" uid="uid://ds5w0niqf74sf" path="res://Player/Sprite.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bhbmfovn1akab" path="res://Player/pixil-frame-0.png" id="3_4j80i"]
-[ext_resource type="Shader" path="res://Player/trail.gdshader" id="3_k7t53"]
+[ext_resource type="Shader" uid="uid://bp8loavad1obf" path="res://Player/trail.gdshader" id="3_k7t53"]
 [ext_resource type="Texture2D" uid="uid://d0cnjivyu2vgu" path="res://Art/dingbats-471.png" id="4_3vb61"]
-[ext_resource type="Shader" path="res://Player/ammo.gdshader" id="4_acxrj"]
+[ext_resource type="Shader" uid="uid://c40cmj2yuvdr2" path="res://Player/ammo.gdshader" id="4_acxrj"]
 [ext_resource type="AudioStream" uid="uid://csa53ugmw7o7o" path="res://Sounds/test2.mp3" id="7_i7tq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k7ee"]
@@ -24,6 +24,7 @@ noise = SubResource("FastNoiseLite_ad110")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q2wto"]
 render_priority = 35
 shader = ExtResource("3_k7t53")
+shader_parameter/noise = SubResource("NoiseTexture2D_koamk")
 shader_parameter/gradientRemap = Vector4(0.708, -2.683, 0, 0.264)
 shader_parameter/beamRemap = Vector4(0.404, 1.12, 1, 200)
 shader_parameter/color1 = Color(0.851769, 0.851769, 0.851769, 1)
@@ -31,7 +32,6 @@ shader_parameter/color2 = Color(0.362829, 0.362829, 0.362829, 1)
 shader_parameter/scale = Vector3(1, 50, 0)
 shader_parameter/threshold = 0.993
 shader_parameter/offset = 1.5
-shader_parameter/noise = SubResource("NoiseTexture2D_koamk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gvin"]
 atlas = ExtResource("3_4j80i")
@@ -168,11 +168,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
 _data = {
-"Jump": SubResource("3"),
-"Land": SubResource("4"),
-"RESET": SubResource("Animation_04jd4"),
-"Reload": SubResource("Animation_jtxjj"),
-"aim": SubResource("Animation_3yobr")
+&"Jump": SubResource("3"),
+&"Land": SubResource("4"),
+&"RESET": SubResource("Animation_04jd4"),
+&"Reload": SubResource("Animation_jtxjj"),
+&"aim": SubResource("Animation_3yobr")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lb3tm"]
@@ -213,7 +213,7 @@ frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 libraries = {
-"": SubResource("AnimationLibrary_1lb64")
+&"": SubResource("AnimationLibrary_1lb64")
 }
 
 [node name="Marker2D" type="Marker2D" parent="Sprite"]

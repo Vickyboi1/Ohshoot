@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://ckny60227fgb4"]
 
-[ext_resource type="Script" path="res://levelselect.gd" id="1_ndahj"]
+[ext_resource type="Script" uid="uid://ca250tu31met1" path="res://levelselect.gd" id="1_ndahj"]
 [ext_resource type="Texture2D" uid="uid://dtdm4m4kmrdym" path="res://Art/ranking.png" id="2_ed4ec"]
 [ext_resource type="Texture2D" uid="uid://ba57q7qjhctss" path="res://Art/elevator.png" id="3_8nter"]
 [ext_resource type="AudioStream" uid="uid://b3dt52m0my6k8" path="res://Sounds/elevator-music-bossa-nova-background-music-version-60s-10900.mp3" id="4_cwcgo"]
@@ -212,8 +212,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vq28k"]
 _data = {
-"RESET": SubResource("Animation_ee4di"),
-"fadein": SubResource("Animation_sxycj")
+&"RESET": SubResource("Animation_ee4di"),
+&"fadein": SubResource("Animation_sxycj")
 }
 
 [node name="Mainmenu" type="Control"]
@@ -233,6 +233,7 @@ selected = 0
 allow_reselect = true
 item_count = 1
 popup/item_0/text = "Choose a level!"
+popup/item_0/id = 0
 popup/item_0/separator = true
 
 [node name="Confirm" type="Button" parent="."]
@@ -293,7 +294,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="fadein" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vq28k")
+&"": SubResource("AnimationLibrary_vq28k")
 }
 
 [node name="LOADING" type="Label" parent="."]

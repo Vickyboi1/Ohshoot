@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dxeva15lnv7wm"]
 
-[ext_resource type="Shader" path="res://Platforms/antijitter.gdshader" id="1_dc2jg"]
+[ext_resource type="Shader" uid="uid://6358y20dmy6k" path="res://Platforms/antijitter.gdshader" id="1_dc2jg"]
 [ext_resource type="Texture2D" uid="uid://ba4rd4slvw66j" path="res://Art/temptilemap.png" id="1_y5fsb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_etqfj"]

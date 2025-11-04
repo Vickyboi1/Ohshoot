@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready() -> void:
+	Engine.time_scale = 1
 	$Confirm.disabled = false
 	
 	#Gets level list
@@ -18,7 +19,7 @@ func _ready() -> void:
 func _on_confirm_pressed() -> void:
 	$Confirm.disabled = true
 	uni.lastselected = $OptionButton.selected
-
+	$LOADING.visible = true
 	$fadein.play("fadein")
 	$Elevator.play("Enter")
 
@@ -52,5 +53,5 @@ func _process(delta: float) -> void:
 
 func _on_elevator_animation_finished() -> void:
 	if $Elevator.animation == "Enter":
-		$LOADING.visible = true
+		
 		get_tree().change_scene_to_file("res://World/Level" +str($OptionButton.get_item_id($OptionButton.selected))  + ".tscn")

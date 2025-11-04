@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b18ghtupalf8r"]
 
-[ext_resource type="Script" path="res://Stage elements/explodingbarrel.gd" id="1_wdpd6"]
-[ext_resource type="Shader" path="res://Stage elements/outlineshader.gdshader" id="2_ln4y1"]
+[ext_resource type="Script" uid="uid://tqtgv4yxh1f3" path="res://Stage elements/explodingbarrel.gd" id="1_wdpd6"]
+[ext_resource type="Shader" uid="uid://c4b1evc0rs6jv" path="res://Stage elements/outlineshader.gdshader" id="2_ln4y1"]
 [ext_resource type="Texture2D" uid="uid://bhh7yxwlmw04n" path="res://Player/explobarrel.png" id="2_nofth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8cf"]

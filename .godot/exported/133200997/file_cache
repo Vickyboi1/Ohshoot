@@ -1,22 +1,23 @@
-res://Platforms/TileMap.tscn::356581375f9cd6240abff42b29da051e::1737908535::res://.godot/exported/133200997/export-26d8315f79a903d976b336d907b2b10f-TileMap.scn
-res://Player/Player.tscn::5d142e0734b8bb6e0ca0f685b2433fa0::1738021597::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
-res://ScreenCamera/ScreenCamera.tscn::7aeb9b3f186b40bfee82ea7170952f8e::1738021598::res://.godot/exported/133200997/export-18afbd2c974f1f7c7db0b0b5768b5a80-ScreenCamera.scn
+res://Platforms/TileMap.tscn::8fc29be9ad89c7314af47c61be52404e::1738283946::res://.godot/exported/133200997/export-26d8315f79a903d976b336d907b2b10f-TileMap.scn
+res://Player/Player.tscn::f2d3332345d8a197fcdb831e4495088f::1738283945::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
+res://ScreenCamera/ScreenCamera.tscn::d251de2e4870c45b81d1440e1bded027::1738283946::res://.godot/exported/133200997/export-18afbd2c974f1f7c7db0b0b5768b5a80-ScreenCamera.scn
 res://Sounds/explosion.tscn::af319f263d1ca7ebd22c281be512f7a9::1737669657::res://.godot/exported/133200997/export-1072381b6bd78d5674f764b2011837bf-explosion.scn
 res://Sounds/Reload.tscn::6b0824e5f5610a1862c54a0f28cb45a7::1737591331::res://.godot/exported/133200997/export-9df4bca73dc4c949bf2b479c41eaf6e1-Reload.scn
 res://Sounds/Shoot.tscn::727af02381eef1e013550b98ca543fc5::1737591331::res://.godot/exported/133200997/export-c595c87d6216e4d2947f318f7621f81d-Shoot.scn
 res://Sounds/splatter.tscn::430fe2c263ccb21888e3f317104a3f98::1737669996::res://.godot/exported/133200997/export-0f1c09f31a02b8609ccfc0ede8bacfd2-splatter.scn
 res://Stage elements/enemy.tscn::274460ad2e354e0cdc6c1674737b8169::1738008922::res://.godot/exported/133200997/export-352476cd2942a24ad6ce57979afabd53-enemy.scn
-res://Stage elements/enemydeath.tscn::fd6a32d6a6b369f64b5a895954e0cae7::1738021598::res://.godot/exported/133200997/export-15d147f934fc79b41d79a0f684063b40-enemydeath.scn
-res://Stage elements/explodingbarrel.tscn::d4d9d8e6cdab1b54bf36b5d26c245ea7::1738021597::res://.godot/exported/133200997/export-300c53868d415aaa92a84dc01ecd4448-explodingbarrel.scn
-res://World/Level1.tscn::f7b8e8c7134821e31d7804f5c2676ff5::1738032048::res://.godot/exported/133200997/export-353d2be4026496f2049f2882994b77dd-Level1.scn
-res://World/Level2.tscn::c6ed71b52190e11c02cf1b2a5034dc6d::1738021598::res://.godot/exported/133200997/export-ba85033c8a2ff3087f083c651885e7f2-Level2.scn
+res://Stage elements/enemydeath.tscn::fd6a32d6a6b369f64b5a895954e0cae7::1738099014::res://.godot/exported/133200997/export-15d147f934fc79b41d79a0f684063b40-enemydeath.scn
+res://Stage elements/explodingbarrel.tscn::d4d9d8e6cdab1b54bf36b5d26c245ea7::1738283945::res://.godot/exported/133200997/export-300c53868d415aaa92a84dc01ecd4448-explodingbarrel.scn
+res://World/Level1.tscn::97de9e3e4098c731209cf4457e70ca37::1738283945::res://.godot/exported/133200997/export-353d2be4026496f2049f2882994b77dd-Level1.scn
+res://World/Level2.tscn::c6ed71b52190e11c02cf1b2a5034dc6d::1738283946::res://.godot/exported/133200997/export-ba85033c8a2ff3087f083c651885e7f2-Level2.scn
 res://World/Level3.tscn::6c743abb5fd6d5055fff1902f4f7c545::1738012805::res://.godot/exported/133200997/export-c17187b4313150444b2202dbe135a1da-Level3.scn
-res://World/Level4.tscn::2b1ad1bd32dbb64f742f21e8d9d65156::1738021598::res://.godot/exported/133200997/export-107782e86c634e0129f0bbe87a22b980-Level4.scn
+res://World/Level4.tscn::2b1ad1bd32dbb64f742f21e8d9d65156::1738099015::res://.godot/exported/133200997/export-107782e86c634e0129f0bbe87a22b980-Level4.scn
 res://World/Level5.tscn::068e993dea5220760aecb543569e8236::1738012813::res://.godot/exported/133200997/export-fbc7b4b0cf4c53097ae6ee69d50eb1c9-Level5.scn
-res://World/Level6.tscn::c2644b62367eec8f92be96ac40454112::1738021604::res://.godot/exported/133200997/export-8baeee04138a2588a011bbbf327f30c0-Level6.scn
-res://World/Level7.tscn::f66f2d7608305f6740381fe57f72c1b4::1738012831::res://.godot/exported/133200997/export-47d47005c955ff91908b353f0570023b-Level7.scn
+res://World/Level6.tscn::a7c2f8e7bc6c8cb874b823c540465c15::1738283946::res://.godot/exported/133200997/export-8baeee04138a2588a011bbbf327f30c0-Level6.scn
+res://World/Level7.tscn::84ad4429da73eb264a62ebc68c722bf4::1738283946::res://.godot/exported/133200997/export-47d47005c955ff91908b353f0570023b-Level7.scn
 res://bullet.tscn::6f81989e8d80c80a354de2b429161f6d::1737753332::res://.godot/exported/133200997/export-6350fccf6e14d2f0c891730ee1d2c6cd-bullet.scn
 res://input_icontilemap.tscn::6c49c41d1527b016b5a6b9909630cc99::1737851331::res://.godot/exported/133200997/export-56c0efd63eb7e4ae0a7aa7a797b3124e-input_icontilemap.scn
-res://levelexit.tscn::87042a70b846a326f4057b03b265792a::1738021598::res://.godot/exported/133200997/export-a5994c0323dba218e6ce6a966d4d1e0b-levelexit.scn
-res://levelselect.tscn::9164f314aa8dd750f2d7070c8e5b81cd::1738021597::res://.godot/exported/133200997/export-0cc2fba73f2698c48ef1668446166451-levelselect.scn
-res://timer.tscn::5bf09954057ea67eb5c7068a23c3fffa::1738021597::res://.godot/exported/133200997/export-46201db2724ffcb96e28b830ef7a9754-timer.scn
+res://levelexit.tscn::431d0e607d3bb4246b97b0da00ee3184::1738283945::res://.godot/exported/133200997/export-a5994c0323dba218e6ce6a966d4d1e0b-levelexit.scn
+res://levelselect.tscn::54b9cfb04652c0e9cf257ed65a5e7239::1738284008::res://.godot/exported/133200997/export-0cc2fba73f2698c48ef1668446166451-levelselect.scn
+res://timer.tscn::69dcde85356e19563644fd7806fafc84::1738283945::res://.godot/exported/133200997/export-46201db2724ffcb96e28b830ef7a9754-timer.scn
+res://World/Level8.tscn::4910544d0bb87382f6e9cbc5d6793f72::1738283946::res://.godot/exported/133200997/export-5115da7c619ff7fb0fba409b1b88d391-Level8.scn

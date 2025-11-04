@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://v6r17r30aovn"]
 
-[ext_resource type="Script" path="res://levelexit.gd" id="1_8qif6"]
+[ext_resource type="Script" uid="uid://3khnvi4t2ytb" path="res://levelexit.gd" id="1_8qif6"]
 [ext_resource type="Texture2D" uid="uid://b8x3rv8tdlcbm" path="res://Art/Circle.png" id="1_pmnsl"]
 [ext_resource type="AudioStream" uid="uid://dasla20xwiwfa" path="res://Sounds/zapThreeToneUp.ogg" id="3_4eoa2"]
 
